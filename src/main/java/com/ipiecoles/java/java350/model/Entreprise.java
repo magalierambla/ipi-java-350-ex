@@ -17,7 +17,6 @@ public final class Entreprise {
     private static final Map<Integer, LocalDate> datePaque = new HashMap<>();
 
     private Entreprise() {
-
     }
 
     static {
@@ -28,7 +27,6 @@ public final class Entreprise {
         COEFF_SALAIRE_ETUDES.put(NiveauEtude.MASTER, 1.4);
         COEFF_SALAIRE_ETUDES.put(NiveauEtude.INGENIEUR, 1.6);
         COEFF_SALAIRE_ETUDES.put(NiveauEtude.DOCTORAT, 1.7);
-
         datePaque.put(2019, LocalDate.of(2019, 4, 21));
         datePaque.put(2020, LocalDate.of(2020, 4, 12));
         datePaque.put(2021, LocalDate.of(2021, 4, 4));
@@ -60,33 +58,30 @@ public final class Entreprise {
         return PRIME_BASE;
     }
 
-    public static List<LocalDate> joursFeries(LocalDate now){
-
+    public static List<LocalDate> joursFeries(LocalDate now) {
         return Arrays.asList(
                 // 1er janvier	Jour de l’an
-                LocalDate.of(now.getYear(), 1,1),
+                LocalDate.of(now.getYear(), 1, 1),
                 // Lendemain du dimanche de Pâques.	Lundi de Pâques
                 datePaque.get(now.getYear()).plusDays(1L),
                 // 1er mai	Fête du Travail
-                LocalDate.of(now.getYear(), 5,1),
+                LocalDate.of(now.getYear(), 5, 1),
                 // 8 mai Fête de la Victoire
-                LocalDate.of(now.getYear(), 5,8),
+                LocalDate.of(now.getYear(), 5, 8),
                 // Jeudi 40 jours après Pâques Ascension Fête chrétienne célébrant la montée de Jésus aux cieux.
                 datePaque.get(now.getYear()).plusDays(40L),
                 // Le lundi suivant le dimanche de Pentecôte (le septième après Pâques).
                 datePaque.get(now.getYear()).plusDays(50L),
                 // 14 juillet Fête nationale
-                LocalDate.of(now.getYear(), 7,14),
+                LocalDate.of(now.getYear(), 7, 14),
                 // 15 août Assomption
-                LocalDate.of(now.getYear(), 8,15),
+                LocalDate.of(now.getYear(), 8, 15),
                 // 1er novembre	Toussaint Fête de tous les saints de l’Église catholique.
-                LocalDate.of(now.getYear(), 11,1),
+                LocalDate.of(now.getYear(), 11, 1),
                 // 11 novembre Armistice de 1918
-                LocalDate.of(now.getYear(), 11,11),
+                LocalDate.of(now.getYear(), 11, 11),
                 // 25 décembre Noël
-                LocalDate.of(now.getYear(), 12,25)
-
+                LocalDate.of(now.getYear(), 12, 25)
         );
     }
-
 }

@@ -17,3 +17,5 @@ public interface EmployeRepository extends JpaRepository<Employe, Long> {
     @Query("select avg(performance) from Employe where SUBSTRING(matricule,0,1) = ?1 ")
     Double avgPerformanceWhereMatriculeStartsWith(String premiereLettreMatricule);
 }
+
+
